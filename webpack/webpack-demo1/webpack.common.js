@@ -60,6 +60,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Caching'
     }),
-    new webpack.HashedModuleIdsPlugin()
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.ProvidePlugin({
+      _: 'lodash',
+      join: ['lodash', 'join']
+    })
   ]
 };
