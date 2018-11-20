@@ -1,11 +1,11 @@
 <template>
-  <div class="container"></div>
+  <div class="container">Index</div>
 </template>
 
 <script>
   export default {
-    name: "category"
-  };
+    name: 'index'
+  }
 </script>
 
 <style scoped>
