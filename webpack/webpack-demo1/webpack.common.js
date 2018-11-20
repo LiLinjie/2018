@@ -5,10 +5,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.ts'
+    app: './src/index.js'
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist')
   },
   optimization: {
@@ -68,10 +68,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Caching'
     }),
-    new webpack.HashedModuleIdsPlugin(),
-    new webpack.ProvidePlugin({
-      _: 'lodash',
-      join: ['lodash', 'join']
-    })
+    new webpack.HashedModuleIdsPlugin()
   ]
 };
