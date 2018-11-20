@@ -1,0 +1,145 @@
+@import "transition";
+
+.clear () {
+  &:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: '';
+    clear: both;
+    zoom: 1;
+  }
+}
+
+.immutable () {
+  transform: translate3d(0, 0, 0);
+}
+
+.position (@type, @left: auto, @right: auto, @top: auto, @bottom: auto) {
+  position: @type;
+  left: @left;
+  right: @right;
+  top: @top;
+  bottom: @bottom;
+}
+
+
+.border-retina(@ratio:2)
+when (@ratio=2){
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: -100%;
+  bottom: -100%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  transform: scale(0.5);
+  transform-origin:0 0;
+  box-sizing: border-box;
+}
+.border-1px(@direction:all,@color:#e6e6e6,@radius:0,@pos:relative)
+when (@direction = all) {
+  border: 1px solid @color;
+  @media screen and (-webkit-min-device-pixel-ratio: 2){
+    position: @pos;
+    border: none !important;
+    &:before{
+      border: 1px solid @color;
+      .border-retina();
+    }
+  }
+}
+
+.border-1px(@direction:all,@color:#e6e6e6,@radius:0,@pos:relative)
+when (@direction = all) and (@radius > 1px) {
+  border-radius: @radius;
+  @media screen and (-webkit-min-device-pixel-ratio: 2){
+    &:before{
+      border-radius: @radius;
+    }
+  }
+}
+
+.border-1px(@direction:all,@color:#e6e6e6,@radius:0,@pos:relative)
+when (@direction = top) {
+  border-top: 1px solid @color;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    position: @pos;
+    border-top: none !important;
+    &:before{
+      border-top: 1px solid @color;
+      .border-retina();
+    }
+  }
+}
+
+.border-1px(@direction:all,@color:#e6e6e6,@radius:0,@pos:relative)
+when (@direction = bottom) {
+  border-bottom: 1px solid @color;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    position: @pos;
+    border-bottom: none !important;
+    &:before{
+      border-bottom: 1px solid @color;
+      .border-retina;
+    }
+  }
+}
+
+.border-1px(@direction:all,@color:#e6e6e6,@radius:0,@pos:relative)
+when (@direction = left) {
+  border-left: 1px solid @color;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    position: @pos;
+    border-left: none !important;
+    &:before{
+      border-left: 1px solid @color;
+      .border-retina;
+    }
+  }
+}
+
+.border-1px(@direction:all,@color:#e6e6e6,@radius:0,@pos:relative)
+when (@direction = right) {
+  border-right: 1px solid @color;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    position: @pos;
+    border-right: none !important;
+    &:before{
+      border-right: 1px solid @color;
+      .border-retina;
+    }
+  }
+}
+
+.border-1px(@direction:all,@color:#e6e6e6,@radius:0,@pos:relative)
+when (@direction = vertical) {
+  border: 1px solid @color;
+  border-width: 1px 0;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    position: @pos;
+    border: none !important;
+    &:before{
+      border: 1px solid @color;
+      border-width: 1px 0;
+      .border-retina;
+    }
+  }
+}
+
+.border-1px(@direction:all,@color:#e6e6e6,@radius:0,@pos:relative)
+when (@direction = horizontal) {
+  border: 1px solid @color;
+  border-width: 0 1px;
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    position: @pos;
+    border: none !important;
+    &:before{
+      border: 1px solid @color;
+      border-width: 0 1px;
+      .border-retina;
+    }
+  }
+}

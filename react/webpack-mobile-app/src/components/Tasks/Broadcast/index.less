@@ -1,0 +1,30 @@
+.broadcast {
+  width: 100%;
+  height: .52rem;
+  line-height: .52rem;
+  background: #FFF3EF;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .list {
+    display: inline-block;
+    white-space: nowrap;
+    animation: broadcast linear infinite;
+  }
+
+  @keyframes broadcast {
+    from {
+      transform: translateX(7.5rem);
+    }
+    to {
+      transform: translateX(-95%);
+    }
+  }
+
+  li {
+    display: inline-block;
+    font-size: .24rem;
+    margin-right: .33rem;
+    color: #F95721;
+  }
+}

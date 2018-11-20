@@ -1,0 +1,172 @@
+@import "../../../less/main";
+
+.task-invite-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:rgba(0,0,0,0.70);
+  }
+  .task-invite-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 5.19rem;
+    height: 3.74rem;
+    z-index: 99;
+    transform: translate(-50%, -50%);
+    padding: .41rem .43rem .4rem;
+    background: #fff;
+    border-radius: .18rem;
+
+    .title {
+      padding-bottom: .26rem;
+      text-align: center;
+      font-size: .32rem;
+      font-weight: normal;
+      color: #4a4a4a;
+    }
+    .link {
+      display: block;
+      width:4.37rem;
+      height:1.23rem;
+      padding: .16rem .12rem;
+      font-size: .3rem;
+      line-height: .38rem;
+      color: #4a4a4a;
+      margin: 0 auto .38rem;
+      background:#fff4eb;
+      border: none;
+      resize: none;
+    }
+    .btn {
+      border:.02rem solid #ff312d;
+      border-radius:.63rem;
+      width:2.57rem;
+      height:.74rem;
+      color: #ff312d;
+      background: transparent;
+      line-height: .7rem;
+    }
+
+    .close {
+      position: absolute;
+      right: .23rem;
+      top: .19rem;
+      .iconfont {
+        color: #000;
+        font-size: .32rem;
+      }
+    }
+  }
+
+  .invite-qrcode-img {
+    position: absolute;
+    left: 0;
+    top: 2.2rem;
+    right: 0;
+    z-index: 999;
+    width: 4.6rem;
+    height: 6rem;
+    margin: auto;
+
+    .share-tip {
+      font-family:PingFangSC-Semibold;
+      font-weight: 600;
+      font-size: .3rem;
+      color: #fff;
+      text-align: center;
+    }
+
+    .close {
+      position: absolute;
+      left: 50%;
+      bottom: -1.5rem;
+      z-index: 999;
+      width: .6rem;
+      height: .6rem;
+      margin-left: -.3rem;
+      background: url(http://img-cows.kkkd.com/Fpz79_ABWC4zA7J0t4cEPq2AYXFv) no-repeat;
+      background-size: 100% 100%;
+
+      &:active {
+        opacity: .7;
+      };
+    }
+  }
+}
+
+.invite-qr-modal {
+  .qrcode-content {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+    .invite-qrcode-content {
+      position: relative;
+      width: 4.6rem;
+      height: 6rem;
+
+      .invite-qrcode-content-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 999;
+      }
+
+      .content-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+
+        .avatar {
+          display: block;
+          margin: 0 auto;
+          width: .95rem;
+          height: .95rem;
+          border-radius: .7rem;
+        }
+
+        .name {
+          font-family:PingFangSC-Medium;
+          font-weight: 500;
+          font-size: .24rem;
+          color: #fff;
+          text-shadow: 0 .01rem .01rem rgba(68,0,0,0.50);
+        }
+
+        .qrcode-wrapper {
+          width: 1.54rem;
+          height: 1.54rem;
+        }
+
+        .invite-tip {
+          font-family:PingFangSC-Medium;
+          font-weight: 500;
+          font-size: .3rem;
+          color: #fff;
+          text-shadow:0 .01rem .01rem rgba(68,0,0,0.50);
+        }
+
+        .desc {
+          font-size: .24rem;
+          color: #fff;
+          margin-top: .1rem;
+        }
+      }
+    }
+  }
+}
+

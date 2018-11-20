@@ -1,0 +1,32 @@
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -.5rem;
+  margin-left: -.5rem;
+  text-align: center;
+  line-height: 1rem;
+  color: #fff;
+  background: #ff2d51;
+  animation: loading 2s infinite cubic-bezier(0.750, 0.000, 0.500, 1.000);
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1) rotate(0);
+    border-radius: 0;
+    background: #ff2d51;
+  }
+  50% {
+    transform: scale(.5) rotate(360deg);
+    border-radius: 50%;
+    background: #0ac787;
+  }
+  100% {
+    transform: scale(1) rotate(720deg);
+    border-radius: 0;
+    background: #ff2d51;
+  }
+}

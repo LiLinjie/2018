@@ -1,0 +1,180 @@
+.task-detail-wrap {
+  padding-bottom: 1.2rem;
+
+  button {
+    &:active {
+      opacity: .92;
+    };
+  };
+
+  .activity-process-tit {
+    position: relative;
+    height: .88rem;
+    line-height: .88rem;
+    padding: 0 .55rem;
+    font-size: .34rem;
+    font-weight: bold;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: .3rem;
+      top: 50%;
+      width: .08rem;
+      height: .45rem;
+      transform: translateY(-50%);
+      background-color: #f00;
+    };
+  }
+
+  .activity-process-content {
+    position: relative;
+    padding: .49rem .4rem;
+    background-color: #fff;
+
+    img {
+      max-width: 100%;
+    }
+
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      width: 100%;
+      height: .06rem;
+      background:#f2f2f2;
+    };
+
+    a {
+      color:#1d85de;
+    }
+
+    .notice-content {
+      padding-bottom: .61rem;
+
+      .notice-title {
+        padding-bottom: .15rem;
+        font-family:PingFangSC-Semibold;
+        font-size: .36rem;
+        font-weight: 600;
+        color: #4a4a4a;
+      }
+
+      .notice-list {
+        padding-left: .55rem;
+
+        p {
+          font-size: .3rem;
+          font-family: PingFangSC-Medium;
+          font-weight: 600;
+          line-height: .4rem;
+        }
+      }
+    }
+
+    .step-title {
+      padding: 0 .4rem .27rem 0;
+      font-family: PingFangSC-Semibold;
+      font-size: .36rem;
+      font-weight: 600;
+      color: #4a4a4a;
+    }
+
+    .step-list {
+      p {
+        padding-left: .55rem;
+        padding-bottom: .18rem;
+        font-family: PingFangSC-Medium;
+        font-size: .3rem;
+        font-weight: 600;
+        line-height: .4rem;
+      }
+
+      img {
+        display: block;
+        width: 4.37rem;
+        height: auto;
+        padding: .24rem 0 .3rem .68rem;
+      }
+    }
+  }
+
+  .task-list {
+    padding: .13rem .35rem .05rem;
+    background-color: #fff;
+
+    .tit {
+      padding: .27rem 0;
+      font-size: .24rem;
+
+      .link {
+        color: #3E90EE;
+        text-decoration:underline;
+      }
+    }
+  }
+
+  .task-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .12rem .65rem .35rem;
+    background:rgba(255,255,255,0.90);
+
+    .footer-tip {
+      padding-bottom: .06rem;
+      text-align: center;
+      font-size: .24rem;
+      color: #ff312d;
+    }
+    
+    .btn {
+      height: .88rem;
+      padding: 0 .65rem;
+      font-size: .32rem;
+      color: #FFFFFF;
+      background: #FF312D;
+      box-shadow: 0 .05rem .2rem 0 #FFA9A7;
+      border-radius: .44rem;
+      &.invite-btn {
+        background: #FF6F2D;
+        line-height: normal;
+
+        .share-tip {
+          font-size: .2rem;
+        }
+      }
+    }
+  }
+
+  .task-detail {
+    .end {
+      text-align: center;
+      color: #999;
+      padding: .2rem;
+    }
+  }
+
+  @keyframes slideShare {
+    from {
+      right: -1.37rem;
+    }
+    to {
+      right: 0;
+    }
+  }
+
+  .share-icon {
+    position: fixed;
+    bottom: 5rem;
+    right: -1.37rem;
+    z-index: 99;
+    width: 1.37rem;
+    height: 1.3rem;
+    background: url(http://img-cows.kkkd.com/Fqghb7Z18CddgMjJHlEXTPpgZRiY) no-repeat;
+    background-size: 100% 100%;
+    animation: slideShare 1.5s forwards 1s;
+  }
+}

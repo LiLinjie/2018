@@ -1,0 +1,76 @@
+.novice-tasks-item {
+  position: relative;
+  width: 6.7rem;
+  height: 1.5rem;
+  padding: 0 .34rem 0 .36rem;
+  margin: 0 auto .2rem;
+  box-shadow: 0 .02rem .16rem 0 rgba(0,0,0,0.12);
+  border-radius: .18rem;
+  background-color: #fff;
+
+  .red-bag-icon {
+    position: relative;
+    width: 1.06rem;
+    height: 1.06rem;
+    margin-right: .15rem;
+    background: url(http://img-cows.kkkd.com/Fta9hb3TRt3KeoWXPJq66vUfHhFc) no-repeat;
+    background-size: 100% 100%;
+
+    .money {
+      position: absolute;
+      left: 0;
+      bottom: .12rem;
+      width: 1.06rem;
+      font-family:PingFangSC-Semibold;
+      font-weight: 600;
+      font-size: .24rem;
+      color: #ffe1c1;
+      text-align: center;
+    }
+
+    .unit {
+      display: inline-block;
+      transform: scale(.5);
+      margin-left: -.04rem;
+      font-size: .28rem;
+    }
+  }
+
+  .title {
+    width: 2.6rem;
+    font-size: .36rem;
+    color: #4a4a4a;
+    line-height: .42rem;
+  }
+
+  .btn {
+    width: 1.38rem;
+    height: .6rem;
+    line-height: .6rem;
+    background: #e9b191;
+    border-radius: 1rem;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    font-size: .24rem;
+    color: #fff;
+    text-align: center;
+
+    &.active {
+      background-image:linear-gradient(0deg, #ff361b 0%, #ff694b 100%);
+    }
+
+    &:active {
+      opacity: .8;
+    };
+  }
+
+  .done-status {
+    position: absolute;
+    right: .26rem;
+    top: -.05rem;
+    width: 1.12rem;
+    height: 1.12rem;
+    background: url(http://img-cows.kkkd.com/FgvWdn4HtUMipzuWsj_bfhElIVDF) no-repeat;
+    background-size: 100% 100%;
+  }
+}

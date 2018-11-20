@@ -1,0 +1,111 @@
+@import "../../less/main";
+
+.novice-strategy-wrapper {
+  height: 100%;
+  padding: .11rem 0 .16rem;
+  background: #FDF5E7;
+
+  .card {
+    width: 6.54rem;
+    padding: .08rem .08rem 0;
+    margin: 0 auto;
+    box-shadow: 0 .01rem .1rem 0 rgba(169,90,90,0.50);
+    border-radius: .12rem .12rem 0 0;
+    background-color: #fff;
+    overflow: hidden;
+
+    .content {
+      position: relative;
+      width: 100%;
+      padding: 1.66rem .35rem .12rem;
+      .border-1px(all, #e1b586);
+      border-bottom: none;
+      background: url(http://img-cows.kkkd.com/FrM083unfL91lW-sX_T0RC9JkS1P) no-repeat .92rem .31rem;
+      background-size: 4.53rem auto;
+      overflow: hidden;
+
+      .circle {
+        position: absolute !important;
+        display: inline-block;
+        top: -.15rem;
+        width: .3rem;
+        height: .3rem;
+        border-radius: .3rem;
+        background: #fff;
+      }
+
+      .left-circle {
+        left: -.15rem;
+        border-bottom: .01rem solid #e1b586;
+      }
+
+      .right-circle {
+        right: -.15rem;
+        border-left: .01rem solid #e1b586;
+      }
+
+      dl {
+        padding-bottom: .35rem;
+        color: #4a4a4a;
+
+        dt {
+          height: .7rem;
+          margin-bottom: .12rem;
+          line-height: .7rem;
+          font-family: PingFangSC-Semibold;
+          font-weight: 600;
+          font-size: .36rem;
+          text-align: center;
+          background: #fff1eb;
+        }
+
+        dd {
+          line-height: .42rem;
+          font-size: .3rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    position: relative;
+    width: 6.8rem;
+    height: 1.24rem;
+    margin: 0 auto;
+    background-image: linear-gradient(-180deg, #fe8578 0%, #ff694b 100%);
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -.18rem;
+      border-top: .09rem solid transparent;
+      border-right: .065rem solid #B50000;
+      border-bottom: .09rem solid #B50000;
+      border-left: .065rem solid transparent;
+    };
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -.18rem;
+      border-top: .09rem solid transparent;
+      border-right: .065rem solid transparent;
+      border-bottom: .09rem solid #B50000;
+      border-left: .065rem solid #B50000;
+    };
+
+    .circle-half {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: .63rem;
+      height: .63rem;
+      transform: translate(-50%, -50%);
+      border-radius: .6rem;
+      background-color: #fff;
+    }
+  }
+}

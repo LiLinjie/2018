@@ -1,0 +1,49 @@
+@import "../../../less/main";
+
+.task-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
+  }
+  .task-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5.8rem;
+    margin: -1.35rem 0 0 -2.9rem;
+    background: #fff;
+    border-radius: .26rem;
+    .content {
+      padding: .6rem .45rem;
+      font-size: .36rem;
+      line-height: .5rem;
+      color: #333;
+      text-align: center;
+    }
+    .task-modal-footer {
+      height: 1rem;
+      .border-1px(top, #E0E2E6);
+      button {
+        font-size: .36rem;
+        color: #93969D;
+        border: none;
+        background: transparent;
+        &.cancel {
+          .border-1px(right, #E0E2E6);
+        }
+        &.ok {
+          color: #02BB00;
+        }
+      }
+    }
+  }
+}

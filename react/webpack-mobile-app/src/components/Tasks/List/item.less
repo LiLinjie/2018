@@ -1,0 +1,154 @@
+@import "../../../less/main";
+
+.task-item {
+  @fontColor: #333;
+  @fontColor2: #93969d;
+  @fontColor3: #999;
+  @activeColor: #ff2d51;
+  position: relative;
+  padding: .49rem .38rem .48rem .48rem;
+  .border-1px(bottom, #F0F0F0);
+  margin-bottom: .28rem;
+  box-shadow:0 2px 16px 0 rgba(0,0,0,0.12);
+  border-radius: .18rem;
+
+  &.new-user-task {
+    position: relative;
+    background:#fff9f9;
+
+    .new-user-task-tag {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: .1rem .36rem .1rem .27rem;
+      background: url(http://img-cows.kkkd.com/Funn13tzt1jX-t9hgz_Tb7gX6nmT) no-repeat;
+      background-size: 100% 100%;
+      font-family:PingFangSC-Medium;
+      font-size: .3rem;
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+
+  .info {
+    position: relative;
+
+    .name {
+      width: 4.68rem;
+      margin-bottom: .16rem;
+      font-family:PingFangSC-Medium;
+      font-size: .36rem;
+      font-weight: 600;
+      line-height: .42rem;
+      color: @fontColor;
+      text-overflow: -o-ellipsis-lastline;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .desc {
+      padding-bottom: .38rem;
+      color: @fontColor2;
+      font-size: .24rem;
+      line-height: .3rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tag {
+      padding: .16rem .15rem;
+      font-size: .22rem;
+      line-height: 0;
+      border-radius: .16rem;
+      &.count {
+        color: #E40501;
+        background: #FFEFEF;
+      }
+      &.end {
+        color: #93969D;
+        background: #F8F8F8;
+      }
+    }
+    .profit {
+      font-size: .36rem;
+      font-weight: 600;
+      color: #FF312D;
+      position: relative;
+      top: -.01rem;
+      font-family:PingFangSC-Medium;
+      .iconfont {
+        margin-left: .1rem;
+        font-weight: bold;
+      }
+      &.end {
+        color: #93969d;
+      }
+
+      &.inactive {
+        color: #FF9A77;
+      }
+
+      .price {
+        padding-right: .11rem;
+      }
+
+      .link-icon {
+        position: relative;
+        display: inline-block;
+        width: .34rem;
+        height: .34rem;
+        border-radius: 50%;
+        background-image:linear-gradient(-179deg, #ff361b 0%, #ff694b 100%);
+        transform: translateY(.02rem);
+
+        &.inactive {
+          background-image: none;
+          background-color: #FF9A77;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: .09rem;
+          height: .09rem;
+          border-style: solid;
+          border-color: #fff;
+          border-width: .028rem .028rem 0 0;
+          transform:  translate(75%, 100%) rotate(45deg);
+        };
+      }
+    }
+  }
+  .join-tag {
+    position: absolute;
+    left: -.12rem;
+    top: .08rem;
+    padding: .16rem .17rem .16rem .13rem;
+    font-size: .22rem;
+    line-height: 0;
+    color: #fff;
+    background-image:linear-gradient(-179deg, #ff361b 0%, #ff694b 100%);
+    border-radius: 0 .2rem .2rem 0;
+    &:after {
+      position: absolute;
+      left: 0;
+      top: .32rem;
+      content: '';
+      width: 0;
+      height: 0;
+      border-right: .06rem solid #C0302D;
+      border-top: .03rem solid #C0302D;
+      border-left: .06rem solid transparent;
+      border-bottom: .03rem solid transparent;
+    }
+  }
+}
+
+

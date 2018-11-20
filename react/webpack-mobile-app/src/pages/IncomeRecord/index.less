@@ -1,0 +1,103 @@
+  @import "../../less/main";
+
+.income-record-wrap {
+  .header {
+    padding: .4rem .3rem 0;
+    background-color: #fff;
+
+    .cash-tit {
+      font-size: .22rem;
+    }
+
+    .price {
+      transform: translateX(-.1rem);
+      font-size: .5rem;
+      font-weight: bold;
+      color: #FF312D;
+    }
+
+    .withdraw-btn {
+      height: .8rem;
+      line-height: .72rem;
+      padding: 0 .4rem;
+      border: .04rem solid #FF312D;
+      border-radius: .4rem;
+      background: #fff;
+      font-size: .32rem;
+      font-weight: bold;
+      color: #FF312D;
+    }
+
+    .tip {
+      padding: .3rem 0;
+    }
+  }
+
+  .income-list-wrap {
+    background: #fff;
+
+    .income-tab {
+      height: .9rem;
+      padding: 0 .35rem;
+      line-height: .9rem;
+      .border-1px(bottom, #f0f0f0);
+
+      li {
+        position: relative;
+        margin-right: .6rem;
+        font-size: .32rem;
+        color: #93969D;
+
+        &.active {
+          color: #FF312D;
+          font-weight: bold;
+
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: .04rem;
+            background: #FF312D;
+          }
+        }
+      }
+    }
+
+    .income-list {
+      padding: .2rem .35rem 0;
+
+      li {
+        padding: .3rem 0;
+        .border-1px(bottom, #f0f0f0);
+
+        img {
+          width: .8rem;
+          height: .8rem;
+          margin-right: .2rem;
+          border-radius: .04rem;
+        }
+
+        .desc-wrap {
+          .tit {
+            width: .4.8rem;
+            padding-bottom: .14rem;
+            font-size: .32rem;
+          }
+
+          .time {
+            font-size: .24rem;
+            color: #93969D;
+          }
+        }
+
+        .income {
+          text-align: right;
+          font-size: .32rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

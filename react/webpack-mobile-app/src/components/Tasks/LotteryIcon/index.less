@@ -1,0 +1,41 @@
+.lottery-icon {
+  position: fixed;
+  top: 7.77rem;
+  right: .05rem;
+  width: 1.37rem;
+  height: 1rem;
+  text-align: center;
+  background: url("http://img-cows.kkkd.com/FjepNm9UHre0O-IDoSZmhms5RAAI") no-repeat;
+  background-size: 1.37rem;
+  .lottery-icon-cover {
+    position: relative;
+    z-index: 1;
+    width: 1.37rem;
+  }
+  .lottery-icon-bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 1.37rem;
+    height: .87rem;
+    padding-top: .25rem;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+  .lottery-icon-content {
+    width: 1.11rem;
+    height: .54rem;
+    animation: lotterySlideDown 4s ease-in infinite;
+  }
+  @keyframes lotterySlideDown {
+    0% {
+      transform: translate3d(0, -100%, 0);
+    }
+    20% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}

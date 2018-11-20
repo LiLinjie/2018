@@ -1,0 +1,56 @@
+@import "var";
+@import "flex";
+@import "animate";
+
+page {
+  background: @pageColor;
+  color: @fontColor;
+  font-size: @fontSize;
+}
+view {
+  box-sizing: border-box;
+  font-size: @fontSize;
+}
+image, img {
+  display: block;
+}
+.iconfont {
+  display: inline-block;
+}
+button  {
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  &:after {
+    border: none;
+  }
+  &.mask-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+  &.formIdBtn{
+    margin: 0;
+    border: none;
+    outline:none;
+    line-height:inherit;
+    color:inherit;
+    font-size:inherit;
+    background: transparent;
+    text-align: left;
+  }
+}
+
+.is-x {
+  .pro-detail-wrap {
+    .share-box {
+      &.bottom {
+        height: 168rpx;
+        padding-bottom: 68rpx;
+      }
+    }
+  }
+}

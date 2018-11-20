@@ -1,0 +1,15 @@
+.transition (@name, @property, @duration, @method, @from, @to, @isAll: false) {
+  .transition-def(@property, @duration, @method, @isAll);
+    @{property}: @from;
+  &&-@{name} {
+      @{property}: @to;
+  }
+}
+
+.transition-def (@property, @duration, @method, @isAll) when (@isAll = true) {
+  transition: all @duration @method;
+}
+
+.transition-def (@property, @duration, @method, @isAll) when (default()) {
+  transition: @property @duration @method;
+}

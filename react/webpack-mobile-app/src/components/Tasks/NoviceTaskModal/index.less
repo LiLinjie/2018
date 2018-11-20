@@ -1,0 +1,95 @@
+@import "../../../less/main";
+
+.task-novice-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  .mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:rgba(74,74,74,0.60);
+  }
+
+  .task-novice-content {
+    position: absolute;
+    top: 5.04rem;
+    left: 50%;
+    width: 5.35rem;
+    height: 5.94rem;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: .18rem;
+    background: url(http://img-cows.kkkd.com/FgS3zcnOrC4ce8HvF_WFeMg3LhIX) no-repeat;
+    background-size: 100% 100%;
+
+    .money {
+      position: absolute;
+      left: 0;
+      top: 1.14rem;
+      width: 100%;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #ff5a3d;
+
+      .unit {
+        display: inline-block;
+        width: .7rem;
+        height: .7rem;
+        margin-left: .1rem;
+        text-align: center;
+        line-height: .7rem;
+        vertical-align: middle;
+        border-radius: 1rem;
+        background: #ff5a3d;
+        font-size: .4rem;
+        font-weight: normal;
+        color: #fff;
+      }
+    }
+
+    .btn {
+      position: absolute;
+      bottom: .63rem;
+      left: 50%;
+      width: 2.27rem;
+      height: .68rem;
+      margin-left: -1.135rem;
+      background-image:linear-gradient(0deg, #d7b173 0%, #f1d5a3 100%);
+      box-shadow:0 .02rem .1rem 0 rgba(231,94,0,0.51);
+      border-radius: 1rem;
+      line-height: .68rem;
+      font-family:PingFangSC-Semibold;
+      font-weight: 600;
+      font-size: .36rem;
+      color: #fff;
+      text-align: center;
+
+      &.active {
+        opacity: .8;
+      }
+    }
+
+    .close {
+      position: absolute;
+      left: 50%;
+      bottom: -1.01rem;
+      width: .6rem;
+      height: .6rem;
+      margin-left: -.3rem;
+      background: url(http://img-cows.kkkd.com/Fpz79_ABWC4zA7J0t4cEPq2AYXFv) no-repeat;
+      background-size: 100% 100%;
+
+      &:active {
+        opacity: .7;
+      };
+    }
+  }
+}

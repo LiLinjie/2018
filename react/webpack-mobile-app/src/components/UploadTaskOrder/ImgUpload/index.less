@@ -1,0 +1,88 @@
+.img-upload-wrap {
+  .upload-content {
+    padding-bottom: .31rem;
+  }
+
+  .img-wrap {
+    position: relative;
+    border: .02rem solid rgba(151,151,151,0.43);
+    width: 3.12rem;
+    height: 4.27rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .remove {
+    position: absolute;
+    right: .19rem;
+    top: .21rem;
+    width: .41rem;
+    height: .41rem;
+    background: url(http://img-cows.kkkd.com/FvEBJepUmyXVovYQYHReBPz3meEf) no-repeat;
+    background-size: 100% 100%;
+
+    &:active {
+      opacity: .8;
+    }
+  }
+
+  .upload-wrap {
+    position: relative;
+    background:#fff2f2;
+    border: .02rem dashed #ff312d;
+
+    button {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 2.04rem;
+      height: .74rem;
+      margin: auto;
+      border: .02rem solid #ff312d;
+      border-radius: .4rem;
+      background-color: transparent;
+      color: #ff312d;
+
+      &:active {
+        opacity: .8;
+      }
+    }
+    .upload-btn {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+      }
+      span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 2.04rem;
+        height: .74rem;
+        margin: auto;
+        border: .02rem solid #ff312d;
+        border-radius: .4rem;
+        background-color: transparent;
+        color: #ff312d;
+        text-align: center;
+        line-height: .74rem;
+        pointer-events: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.task-user-info-wrap {
+  position: relative;
+  width: 100%;
+  height: 2.34rem;
+  background: #EBEBEB;
+
+  .task-user-info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    height: 3.12rem;
+    width: 6.9rem;
+    padding: .45rem .36rem .3rem;
+    margin: .17rem .3rem 0;
+    
+    color:#fff;
+
+    background: url("http://img-cows.kkkd.com/FlWMH_RqgzHzeAgTlKKZW0GQZH8E") no-repeat;
+    background-size: 100% 100%;
+    border-radius: .34rem;
+    box-shadow:0 .06rem .2rem 0 rgba(255,87,87,0.50);
+    
+    .guide-tit {
+      font-size: .4rem;
+      font-weight: bold;
+      padding-bottom: .17rem;
+    }
+
+    .guide-process {
+      padding-bottom: .56rem;
+      font-size: .24rem;
+
+      .process {
+        position: relative;
+        padding: 0 .26rem 0 .3rem;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: .22rem;
+          height: .22rem;
+          border: .02rem solid #fff;
+          border-radius: 50%;
+        }
+
+        &:after {
+          content: '1';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: .26rem;
+          font-size: .22rem;
+          text-align: center;
+          transform: scale(.8);
+        };
+
+        &:nth-child(2):after {
+          content: '2';
+        };
+
+        &:nth-child(3):after {
+          content: '3';
+        };
+      }
+    }
+
+    .profile {
+      padding-bottom: .38rem;
+
+      .avatar {
+        width: 1.1rem;
+        height: 1.09rem;
+        border: .05rem solid #fff;
+        margin-right: .2rem;
+        background-color: #fff;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .name {
+        padding-bottom: .15rem;
+        font-size: .4rem;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .tel {
+        font-size: .24rem;
+      }
+
+      .link-register {
+        position: relative;
+        display: inline-block;
+        padding-right: .1rem;
+
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: .08rem;
+          height: .08rem;
+          border-style: solid;
+          border-color: #fff;
+          border-width: .028rem .028rem 0 0;
+          transform: rotate(45deg) translateY(-50%);
+        };
+      }
+    }
+
+    .income-tit {
+      font-size: .24rem;
+      padding-bottom: .12rem;
+    }
+
+    .price {
+      font-size: .58rem;
+      font-weight: bold;
+      text-shadow: 0 0.04rem 0.08rem rgba(255,62,62,0.50);;
+    }
+
+    .income-link {
+      font-size: .28rem;
+      text-shadow:0 .04rem .08rem rgba(238,0,0,0.50);
+    }
+  }
+}
+
+

@@ -1,0 +1,33 @@
+@import "../../../less/main";
+
+.task-list-wrap {
+  background: #fff;
+  .task-tab {
+    height: .9rem;
+    padding: 0 .35rem;
+    line-height: .9rem;
+    .border-1px(bottom, #f0f0f0);
+    li {
+      position: relative;
+      margin-right: .6rem;
+      font-size: .32rem;
+      color: #93969D;
+      &.active {
+        color: #FF312D;
+        font-weight: bold;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: .04rem;
+          background: #FF312D;
+        }
+      }
+    }
+  }
+  .task-list {
+    padding: .2rem .35rem .01rem;
+  }
+}

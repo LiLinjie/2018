@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="/static/polyfill.min.js"></script>
+    <script>
+      // 'onorientationchange' in window ? window.onorientationchange = dpr : window.onresize = dpr;
+      window.onresize = dpr;
+      dpr('init');
+
+      function dpr(type) {
+        var d = document;
+        const desWidth = 750;
+        var _dpr = (1 / window.devicePixelRatio);
+        var orientation =
+          screen.orientation && screen.orientation.type === 'portrait-primary' ? 0 : (window.orientation === 0 ? 0 : -90);
+        // console.log('type:' + type + ' orientation:' + orientation);
+        _dpr = 1;
+        const _MaxWidth = 414 * window.devicePixelRatio;
+        const userAgent = navigator.userAgent;
+        var widthStr = 'device-width';
+        var isMobile = true;
+        var iWidth = 0;
+        var _html = d.getElementsByTagName('html')[0];
+        /* eslint eqeqeq: 1 */
+        if (userAgent.toLowerCase().indexOf('iphone') == -1 && userAgent.toLowerCase().indexOf('android') == -1) {
+          isMobile = false; // iWidth = _MaxWidth;
+          widthStr = iWidth + 'px';
+        }
+        d.querySelector('[name="viewport"]').setAttribute('content',
+          'width=' + widthStr + ' , initial-scale=' + _dpr + ', maximum-scale=' + _dpr + ', minimum-scale=' + _dpr + ', user-scalable=no');
+        // 竖屏
+        if (orientation === 0) {
+          iWidth = Math.min(d.documentElement.clientWidth, window.innerWidth);
+        } else {
+          iWidth = Math.min(d.documentElement.clientWidth, window.innerWidth, window.innerHeight);
+        }
+        console.log('clientWidth:' + d.documentElement.clientWidth + ' innerWidth:' + window.innerWidth + ' innerHeight:' + window.innerHeight);
+        console.log('iWidth: ' + iWidth + ' desWidth: ' + desWidth);
+        if (!isMobile) iWidth = _MaxWidth;
+        _html.style.fontSize = (((100 * iWidth) / desWidth)) + 'px';
+        _html.dataset.dpr = 1; // window.devicePixelRatio;
+      };
+
+      if (typeof localStorage === 'object') {
+        try {
+          localStorage.setItem('localStorage', 1);
+          localStorage.removeItem('localStorage');
+        } catch (e) {
+          Storage.prototype._setItem = Storage.prototype.setItem;
+          Storage.prototype.setItem = function() {};
+          alert('您当前浏览器不支持本地存储功能，一般以下几种情况会出现此提示： \r\n 1. Ios Safari 无痕模式下打开此页面 \r\n 2. 关闭了系统的本地存储功能');
+        }
+      }
+      window.user = {};
+      window.support = {};
+      window.wxData = {
+        ready: false,
+        config: {},
+        timer: null,
+        count: 0
+      };
+      window.GPAGE = 0;
+      window.GSIZE = 0;
+
+      window.requestAnimationFrame = window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        window.setTimeout;
+
+      window.cancelRequestAnimationFrame = window.cancelRequestAnimationFrame || window.webkitCancelAnimationFrame || window.webkitCancelRequestAnimationFrame || window.mozCancelRequestAnimationFrame || window.oCancelRequestAnimationFrame || window.msCancelRequestAnimationFrame || window.clearTimeout;
+    </script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+</html>

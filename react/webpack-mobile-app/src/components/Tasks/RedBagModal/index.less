@@ -1,0 +1,105 @@
+.task-redBag-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  .mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:rgba(74,74,74,0.70);
+  }
+  .redBag-modal-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    &.closed {
+      top: 1.62rem;
+      width: 5.36rem;
+      height: 6.31rem;
+      background: url("http://img-cows.kkkd.com/Fqh_VVBvmTethYumqC37W0o5f3CG") no-repeat 0 0 / cover;
+      .open-btn {
+        position: absolute;
+        top: 1.87rem;
+        left: 1.65rem;
+        width: 1.9rem;
+        height: 1.9rem;
+        animation: chai 1.2s infinite linear .6s;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      p {
+        position: absolute;
+        top: 4.17rem;
+        left: 1rem;
+        width: 3.2rem;
+        text-align: center;
+        color: #fff;
+        font-size: .4rem;
+        line-height: .56rem;
+      }
+    }
+    &.opened {
+      top: 1.23rem;
+      width: 6.39rem;
+      height: 6.84rem;
+      padding: 4.04rem 1.2rem 0 1.4rem;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      background: url("http://img-cows.kkkd.com/Fogsu5qJ-pC26ro1nM-ftQJjaKDQ") no-repeat 0 0 /cover;
+      .name {
+        font-size: .38rem;
+        line-height: .53rem;
+      }
+      .money {
+        height: .67rem;
+        margin-bottom: .2rem;
+        font-size: .3rem;
+        span {
+          padding: 0 .12rem;
+          font-size: .48rem;
+          color:#f8e71c;
+        }
+      }
+      .btn {
+        margin-bottom: .1rem;
+        background-image:linear-gradient(-180deg, #ffe251 0%, #ffc200 100%);
+        border-radius:1rem;
+        font-size:.36rem;
+        font-weight: bold;
+        color:#ff4600;
+        width:2.4rem;
+        height:.78rem;
+      }
+      .tip {
+        font-size:.2rem;
+        font-weight: normal;
+        color:#fffdd6;
+      }
+    }
+  }
+}
+@keyframes chai {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  30% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
