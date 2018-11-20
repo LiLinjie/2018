@@ -19,10 +19,16 @@ module.exports = [{
 }, {
   path: 'pages/rank',
   name: 'Rank',
+  config: {
+    navigationBarTitleText: '排行榜'
+  }
 }, {
   path: 'pages/search',
   name: 'Search',
 }, {
   path: 'pages/search-help',
   name: 'SearchHelp',
+  config: {
+    navigationBarTitleText: '拼多多优惠券'
+  }
 }];

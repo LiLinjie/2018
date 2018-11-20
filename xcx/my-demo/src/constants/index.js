@@ -37,7 +37,7 @@ export const UV_PRICE = 0.01;
 export const DEFAULT_SUB_RATE = 0.09;
 
 // 默认拼多多pid
-export const DEFAULT_PDD_PID = '50002_700756';
+export const DEFAULT_PDD_PID = '50002_10995691';
 
 // 默认头像
 export const DEFAULT_AVATAR = 'http://img-cows.kkkd.com/FgmR_JbNmswhN7C47B1lyJC7yItg';

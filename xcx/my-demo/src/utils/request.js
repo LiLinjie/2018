@@ -7,7 +7,7 @@ export function request (url, data, method = 'GET', header) {
     }
     header = Object.assign({}, header)
 
-    console.log('reqUrl:', url, 'reqData:', data);
+    // console.log('reqUrl:', url, 'reqData:', data);
     wx.request({
       url,
       data,
