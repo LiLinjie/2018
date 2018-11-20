@@ -1,11 +1,11 @@
 <template>
-  <div class="container"></div>
+  <div class="container">search</div>
 </template>
 
 <script>
   export default {
-    name: "user-center"
-  };
+    name: 'search'
+  }
 </script>
 
 <style scoped>

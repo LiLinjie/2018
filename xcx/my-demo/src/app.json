@@ -1,11 +1,41 @@
 {
   "pages": [
-    "pages/index"
+    "pages/index",
+    "pages/product-detail",
+    "pages/products",
+    "pages/category",
+    "pages/cat-products",
+    "pages/rank",
+    "pages/search",
+    "pages/search-help"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ef1612",
     "navigationBarTitleText": "阁楼小屋",
-    "navigationBarTextStyle": "black"
-  }
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "#f7f7f7"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#EF1612",
+    "backgroundColor": "#fff",
+    "list": [{
+      "pagePath": "pages/index",
+      "iconPath": "static/images/tab/mall.png",
+      "selectedIconPath": "static/images/tab/mall-selected.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/rank",
+      "iconPath": "static/images/tab/rank.png",
+      "selectedIconPath": "static/images/tab/rank-selected.png",
+      "text": "排行榜"
+    }, {
+      "pagePath": "pages/category",
+      "iconPath": "static/images/tab/search.png",
+      "selectedIconPath": "static/images/tab/search-selected.png",
+      "text": "搜券"
+    }]
+  },
+  "navigateToMiniProgramAppIdList": ["wx32540bd863b27570"]
 }

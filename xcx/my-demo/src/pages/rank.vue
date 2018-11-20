@@ -1,11 +1,11 @@
 <template>
-  <div class="container"></div>
+  <div class="container">rank</div>
 </template>
 
 <script>
   export default {
-    name: "lottery-list"
-  };
+    name: 'rank'
+  }
 </script>
 
 <style scoped>
