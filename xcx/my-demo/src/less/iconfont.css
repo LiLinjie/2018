@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 863844 */
-  src: url('//at.alicdn.com/t/font_863844_eq4t1x5pr9h.eot');
-  src: url('//at.alicdn.com/t/font_863844_eq4t1x5pr9h.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_863844_eq4t1x5pr9h.woff') format('woff'),
-  url('//at.alicdn.com/t/font_863844_eq4t1x5pr9h.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_863844_eq4t1x5pr9h.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_863844_9dyp93hldyq.eot');
+  src: url('//at.alicdn.com/t/font_863844_9dyp93hldyq.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_863844_9dyp93hldyq.woff') format('woff'),
+  url('//at.alicdn.com/t/font_863844_9dyp93hldyq.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_863844_9dyp93hldyq.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -22,6 +22,8 @@
 .icon-share:before { content: "\e690"; }
 
 .icon-haoping:before { content: "\e66f"; }
+
+.icon-gengduo:before { content: "\e729"; }
 
 .icon-clear:before { content: "\e650"; }
 

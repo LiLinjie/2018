@@ -1,4 +1,6 @@
 import wxAsync from './wxAsync';
+import MD5 from './MD5';
+import config from '../config';
 
 function formatNumber (n) {
   const str = n.toString()
@@ -129,6 +131,45 @@ export function encryptTxt(txt, secretChar = '****') {
   return txt;
 }
 
+/**
+ * 价格转换
+ * @param _price
+ * @param fixedCount 保留小数位数
+ * @returns {*}
+ */
+export function getPrice (_price, fixedCount = 2) {
+  if ((_price + '').includes('.')) {
+    return _price;
+  }
+  return (_price / 100).toFixed(fixedCount);
+}
+
+function e(e) {
+  for (var t = Object.keys(e).sort(), n = {}, r = 0; r < t.length; r++) n[t[r]] = e[t[r]];
+  return n;
+}
+
+export function getParams (t) {
+  var i = {}, c = config.client_secret, s = {
+    client_id: config.client_id,
+    timestamp: Date.parse(new Date()) / 1e3
+  }, a = e(i = Object.assign(s, t));
+  for (var o in a) c += o, c += a[o];
+  return c += config.client_secret, i.sign = MD5(c), i;
+}
+
+export function linkTo (url, type) {
+  if (type === 'tabPage') {
+    wx.switchTab({
+      url
+    });
+  } else {
+    wx.navigateTo({
+      url
+    });
+  }
+}
+
 export default {
   formatNumber,
   formatTime,
@@ -137,5 +178,7 @@ export default {
   getQuery,
   downloadImg,
   compareVersion,
-  encryptTxt
+  encryptTxt,
+  getPrice,
+  linkTo
 }
