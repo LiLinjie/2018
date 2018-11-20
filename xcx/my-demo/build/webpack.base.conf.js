@@ -7,7 +7,7 @@ var MpvuePlugin = require('webpack-mpvue-asset-plugin')
 var glob = require('glob')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var relative = require('relative')
-var MpVueEntry = require('mpvue-entry')
+var MpvueEntry = require('mpvue-entry');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -31,7 +31,7 @@ module.exports = {
   // 如果要自定义生成的 dist 目录里面的文件路径，
   // 可以将 entry 写成 {'toPath': 'fromPath'} 的形式，
   // toPath 为相对于 dist 的路径, 例：index/demo，则生成的文件地址为 dist/index/demo.js
-  entry: MpVueEntry.getEntry('./src/router.js'),
+  entry: MpvueEntry.getEntry('./src/router.js'),
   target: require('mpvue-webpack-target'),
   output: {
     path: config.build.assetsRoot,
@@ -64,9 +64,7 @@ module.exports = {
           'babel-loader',
           {
             loader: 'mpvue-loader',
-            options: {
-              checkMPEntry: true
-            }
+            options: Object.assign({checkMPEntry: true}, vueLoaderConfig)
           },
         ]
       },
@@ -97,7 +95,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new MpVueEntry(),
+    new MpvueEntry(),
     new MpvuePlugin(),
     new CopyWebpackPlugin([{
       from: '**/*.json',
@@ -108,7 +106,7 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),
-        to: path.resolve(__dirname, '../dist/static'),
+        to: path.resolve(config.build.assetsRoot, './static'),
         ignore: ['.*']
       }
     ])

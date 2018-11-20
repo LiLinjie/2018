@@ -7,10 +7,10 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"miniprogramRoot": "./dist/",
+	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
-	"appid": "wx39c0ef411bf2b47d",
-	"projectname": "mpvue-yuehui",
+	"appid": "touristappid",
+	"projectname": "my-demo",
 	"condition": {
 		"search": {
 			"current": -1,
