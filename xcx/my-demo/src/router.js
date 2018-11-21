@@ -14,6 +14,7 @@ module.exports = [{
   path: 'pages/category',
   name: 'Category',
   config: {
+    navigationBarTitleText: '搜券',
     disableScroll: true
   }
 }, {
@@ -25,10 +26,7 @@ module.exports = [{
 }, {
   path: 'pages/search',
   name: 'Search',
-}, {
-  path: 'pages/search-help',
-  name: 'SearchHelp',
   config: {
-    navigationBarTitleText: '拼多多优惠券'
+    navigationBarTitleText: '搜索'
   }
 }];

@@ -27,9 +27,9 @@
               <button open-type="share"></button>
             </div>
           </div>
-          <div class="coupon-btn flex items-center" target="miniProgram">
+          <div class="coupon-btn flex items-center" target="miniProgram" v-if="goodsInfo.coupon_discount > 0">
             <div class="flex-1 flex justify-center items-center">
-              <div v-if="goodsInfo.coupon_discount > 0">
+              <div>
                 <span class="price">{{goodsInfo.coupon_discount}}元 </span>券
               </div>
             </div>

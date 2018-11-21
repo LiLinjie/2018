@@ -6,8 +6,7 @@
     "pages/category",
     "pages/cat-products",
     "pages/rank",
-    "pages/search",
-    "pages/search-help"
+    "pages/search"
   ],
   "window": {
     "backgroundTextStyle": "dark",

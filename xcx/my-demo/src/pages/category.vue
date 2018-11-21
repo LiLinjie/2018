@@ -1,9 +1,6 @@
 <template>
   <div class="container" :style="{backgroundPosition: '0 ' + backgroundPosition}">
     <div class="search-box-wrap">
-      <div class="search-help flex items-center justify-center" @tap="linkTo('/pages/search-help')">
-        <i class="iconfont icon-help"></i>教程
-      </div>
       <div class="search-box">
         <view class="search flex items-center justify-center" @tap="toSearch('')">
           <i class="iconfont icon-sousuo-"></i>
@@ -643,16 +640,16 @@
 <style scoped lang="less">
   @import "../less/main";
   .container {
-    background: #e40501 url("http://img-cows.kkkd.com/FlLhLbjd_mz8jQxdb3HPB3dHsRbq") no-repeat 0 0;
+    background: #e40501 url("http://img-cows.kkkd.com/FlLhLbjd_mz8jQxdb3HPB3dHsRbq") no-repeat 0 -80rpx;
     background-size: 100%;
     .search-box-wrap {
       width:100%;
-      height:364rpx;
+      height:404rpx;
       position:relative;
       z-index:3;
       .search-box {
         position:relative;
-        top:180rpx;
+        top:220rpx;
         z-index:2;
         height:100rpx;
         line-height:100rpx;
@@ -711,7 +708,7 @@
       width: 750rpx;
       z-index: 2;
       background: #fff;
-      height: calc(100vh - 120rpx - 384rpx);
+      height: calc(100vh - 404rpx);
       .categories {
         position:absolute;
         left:0;

@@ -40,7 +40,7 @@
               <p class="desc">物美价廉 超低折扣</p>
             </div>
           </div>
-          <div class="flex-1" @tap="linkTo('/pages/rank')">
+          <div class="flex-1" @tap="linkTo('/pages/rank', 'tabPage')">
             <div class="entry-title flex flex-column justify-center">
               <div class="top flex items-center">
                 <img src="https://img-cows.kkkd.com/FiG1AvHk78dzTza5M94zQUrt3R4T" alt="" class="icon">
@@ -66,7 +66,7 @@
   import productItem from '../components/productItem-2';
   import tabBar from '../components/tabBar';
   import * as service from '../services/product';
-  import {getPrice} from '../utils'
+  import {getPrice, linkTo} from '../utils'
   import config from '../config';
 
   export default {
@@ -159,6 +159,7 @@
         this.getList();
       },
       getInit () {
+        this.isHideTitleBar = true;
         this.products = [];
         this.hasMore = true;
         this.isRequesting = false;
@@ -175,6 +176,9 @@
       },
       swiperChange (e) {
         this.current = e.target.current;
+      },
+      linkTo (url, type) {
+        linkTo(url, type);
       }
     },
     onPageScroll (e) {

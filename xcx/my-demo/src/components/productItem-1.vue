@@ -22,7 +22,7 @@
     methods: {
       goDetail (id) {
         wx.navigateTo({
-          url: `/pages/prod-detail?productId=${id}`
+          url: `/pages/product-detail?productId=${id}`
         })
       }
     }
