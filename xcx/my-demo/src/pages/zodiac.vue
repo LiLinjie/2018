@@ -1,16 +1,15 @@
 <template>
   <div class="container">
-    index
+    请输入您的星座：<input type="text" v-model="zodiac">
   </div>
 </template>
 
 <script>
   export default {
-    name: "index"
-  };
+    name: 'zodiac'
+  }
 </script>
 
-<style scoped lang="less">
-.container{
-}
+<style scoped>
+
 </style>

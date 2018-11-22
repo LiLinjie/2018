@@ -176,7 +176,7 @@
       },
       toHome () {
         wx.switchTab({
-          url: '/pages/index'
+          url: '/pages/mall'
         })
       },
       getInit () {

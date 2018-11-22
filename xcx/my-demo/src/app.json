@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/index",
+    "pages/mall",
     "pages/product-detail",
     "pages/products",
     "pages/category",
@@ -11,7 +11,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ef1612",
-    "navigationBarTitleText": "阁楼小屋",
+    "navigationBarTitleText": "糯米团子生活小助手",
     "navigationBarTextStyle": "#fff",
     "backgroundColor": "#f7f7f7"
   },
@@ -20,10 +20,10 @@
     "selectedColor": "#EF1612",
     "backgroundColor": "#fff",
     "list": [{
-      "pagePath": "pages/index",
+      "pagePath": "pages/mall",
       "iconPath": "static/images/tab/mall.png",
       "selectedIconPath": "static/images/tab/mall-selected.png",
-      "text": "首页"
+      "text": "商城"
     }, {
       "pagePath": "pages/rank",
       "iconPath": "static/images/tab/rank.png",

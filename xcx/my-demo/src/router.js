@@ -1,6 +1,6 @@
 module.exports = [{
-  path: 'pages/index',
-  name: 'Index'
+  path: 'pages/mall',
+  name: 'Mall'
 }, {
   path: 'pages/product-detail',
   name: 'prodDetail'
