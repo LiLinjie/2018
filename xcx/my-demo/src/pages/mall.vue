@@ -27,7 +27,7 @@
             <p class="desc">全民疯抢 低价包邮</p>
           </div>
           <div class="entry-img flex justify-around">
-            <image v-if="mall < 2" v-for="(item, index) in recommendList" :src="item.goods_thumbnail_url" :key="mall"></image>
+            <image v-if="index < 2" v-for="(item, index) in recommendList" :src="item.goods_thumbnail_url" :key="mall"></image>
           </div>
         </div>
         <div class="entry-right flex-1 flex flex-column">
