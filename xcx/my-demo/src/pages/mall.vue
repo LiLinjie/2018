@@ -11,7 +11,7 @@
               indicatorDots="true" indicatorColor="#d8d8d8" indicator-active-color="#ef1612" circular="true"
               @change="swiperChange"
       >
-        <swiper-item @tap.stop="goToSwiperDetail(item.pageUrl, item.type)" class="titleBar" v-for="(item, index) in swiperData" :key="mall">
+        <swiper-item @tap.stop="linkTo(item.pageUrl, item.type)" class="titleBar" v-for="(item, index) in swiperData" :key="mall">
           <div class="img-bg" :style="{backgroundImage: 'url(' + item.image_url + ')'}"></div>
         </swiper-item>
       </swiper>
