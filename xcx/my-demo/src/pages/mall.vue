@@ -194,6 +194,9 @@
       if (this.hasMore && !this.isRequesting) {
         this.getList();
       }
+    },
+    onShareAppMessage () {
+
     }
   }
 </script>

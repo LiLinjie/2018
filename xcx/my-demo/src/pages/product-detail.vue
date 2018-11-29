@@ -198,6 +198,9 @@
       const options = getQuery();
       this.id = options.productId;
       this.getDetail();
+    },
+    onShareAppMessage () {
+
     }
   };
 </script>
