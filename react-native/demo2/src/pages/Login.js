@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableHighlight, Button, Alert, AsyncStorage, TouchableOpacity,  } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableHighlight, Alert, AsyncStorage, TouchableOpacity } from 'react-native';
 import { unitWidth, statusBarHeight } from '../utils/AdapterUtil';
 import * as service from '../services/user';
 import { theme } from '../config/theme';
-import LinearGradient from 'react-native-linear-gradient';
+import Button from '../components/Button';
 
 export default class Login extends React.Component {
   static navigationOptions = {
@@ -72,10 +72,10 @@ export default class Login extends React.Component {
               </TouchableHighlight>
             </View>
           </View>
-          <TouchableOpacity
-            onPress={() => this.login()}>
-            <LinearGradient colors={['#FE787E', '##FE0C41']} style={styles.button}><Text>登录</Text></LinearGradient>
-          </TouchableOpacity>
+          <Button
+            onPress={() => this.login()}
+            text="登录"
+          />
         </View>
       </View>
     )
@@ -127,10 +127,5 @@ const styles = StyleSheet.create({
   codeText: {
     color: '#FF7896',
     fontSize: unitWidth * 24
-  },
-  button: {
-    width: unitWidth * 600,
-    height: unitWidth * 88,
-
   }
 })

@@ -10,5 +10,5 @@ export function getReg (params) {
 }
 
 export function getUserDetail () {
-  return get(UC.USER_DETAIL);
+  return post(UC.USER_DETAIL);
 }

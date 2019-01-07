@@ -2,7 +2,7 @@ export const UC = {
   USER_INFO: '/uc/userInfo',
   REGISTER: '/agent/appUserLogin',
   GET_REG: '/agent/sms/reg',
-  USER_DETAIL: '/agent/user/detail',
+  USER_DETAIL: '/agent/newUser/detail',
   USER_UNBIND: '/agent/user/changeUserName',
   USER_LOGIN: '/uc/tkLogin',
   USER_LOGOUT: '/uc/tklogout',

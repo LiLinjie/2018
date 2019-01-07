@@ -6,6 +6,18 @@ export function getProList (params) {
   return post(PRODUCTS.SEARCH, params);
 }
 
+/**
+ * 获取商品推广信息
+ * @param {agentId, comId}
+ */
 export function getDetail (params) {
   return post(PRODUCTS.AGENT_DETAIL, params);
+}
+
+/**
+ * 获取商品图文详情
+ * @param {comId}
+ */
+export function getDetailItem (params) {
+  return post(PRODUCTS.DETAIL_ITEM, params);
 }

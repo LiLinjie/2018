@@ -1,15 +1,18 @@
 import qs from 'qs';
+import {AsyncStorage} from 'react-native'
 
 const domain = 'https://restapi.xuanwonainiu.com';
 
 async function request (method, url, body) {
   method = method.toLowerCase();
+  const userToken = await AsyncStorage.getItem('userToken');
 
   const options = {
     method,
     headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+      'APPSession': userToken || ''
     }
   };
 
