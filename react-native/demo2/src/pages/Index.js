@@ -1,8 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, StatusBar, FlatList, Image, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, StatusBar, FlatList, Image, TouchableHighlight, TextInput } from 'react-native';
 import Swiper from 'react-native-swiper';
 import LinearGradient from 'react-native-linear-gradient';
 // import TitleBar from '../components/TitleBar';
+import RefreshListView from '../components/Refresh/RefreshListView';
+import RefreshState from '../components/Refresh/RefreshState';
 import { width, unitWidth } from '../utils/AdapterUtil';
 import { imgParser } from '../utils';
 import * as service from '../services/product';
@@ -12,20 +14,62 @@ export default class IndexPage extends React.PureComponent {
   constructor (props) {
     super(props);
     this.state = {
-      list: []
+      list: [],
+      page: 0,
+      size: 20,
+      keyword: ''
     }
   }
-  componentWillMount () {
-    this.getList();
+  componentDidMount () {
+    // this.getList();
+    console.log(this.listView);
+    this.listView.beginHeaderRefresh();
   }
   async getList () {
-    const res = await service.getProList({page: 0, size: 10});
-    const list  = res.data.data.data;
+    let { page, size, keyword, list } = this.state;
+    const params = {
+      page,
+      size,
+      prodName: keyword || undefined
+    }
+    const res = await service.getProList(params);
+    let prodList  = list.concat(res.data.data.data);
+    const totalCount = res.data.data.totalItem;
+    const currentCount = prodList.length;
+
+    let footerState = RefreshState.Idle;
+    if (currentCount < totalCount) {
+      footerState = RefreshState.CanLoadMore;
+      page ++;
+    } else {
+      footerState = RefreshState.NoMoreData;
+    }
     this.setState({
-      list
+      list: prodList,
+      page
+    });
+    this.listView.endRefreshing(footerState);
+  }
+  onChangeText (params) {
+    this.setState(params)
+  }
+  handleSearch () {
+    this.setState({
+      page: 0,
+      list: []
+    }, () => {
+      this.getList();
     });
   }
-  _keyExtractor = (item, index) => item.id;
+  refresh () {
+    this.setState({
+      page: 0,
+      list: []
+    }, () => {
+      this.getList();
+    })
+  }
+  _keyExtractor = (item, index) => item.id.toString();
   render () {
     const { navigation } = this.props;
     const { list } = this.state;
@@ -36,14 +80,28 @@ export default class IndexPage extends React.PureComponent {
           useAngle={true}
           angle={65}
           style={styles.searchWrapper}>
-          <View style={styles.search}>
-            <Text style={styles.searchText}>输入关键词或粘贴宝贝标题</Text>
-          </View>
+          <TextInput
+            placeholder="输入关键词或粘贴宝贝标题"
+            placeholderTextColor="#ffffffaa"
+            style={styles.searchText}
+            returnKeyType="search"
+            onChangeText={(keyword) => this.onChangeText({keyword})}
+            onSubmitEditing={() => this.handleSearch()}
+          />
         </LinearGradient>
-        <FlatList
+        {/*<FlatList
           data={list}
           keyExtractor={this._keyExtractor}
           renderItem={({item}) => this._renderItem(item)}
+        />*/}
+        <RefreshListView
+          ref={(ref) => {this.listView = ref}}
+          data={list}
+          renderItem={(item) => this._renderItem(item.item)}
+          keyExtractor={this._keyExtractor}
+          ListEmptyComponent={this._renderEmptyView}
+          onHeaderRefresh={() => { this.refresh() }}
+          onFooterRefresh={() => { this.getList() }}
         />
       </View>
     )
@@ -75,6 +133,9 @@ export default class IndexPage extends React.PureComponent {
         </View>
       </TouchableHighlight>
     )
+  }
+  _renderEmptyView = (item) => {
+    return <View/>
   }
 }
 
@@ -109,17 +170,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  search: {
+  searchText: {
     width: unitWidth * 710,
     height: unitWidth * 64,
+    textAlign: 'center',
+    fontSize: unitWidth * 28,
+    color: '#fff',
     backgroundColor: 'rgba(248,248,248,.24)',
     borderRadius: unitWidth * 100,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  searchText: {
-    fontSize: unitWidth * 28,
-    color: '#fff'
   },
   itemInfo: {
     flexDirection: 'row',

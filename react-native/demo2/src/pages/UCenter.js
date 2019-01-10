@@ -45,7 +45,7 @@ export default class UCenterPage extends React.PureComponent {
             </View>
           </View>
         </LinearGradient>
-        <View style={styles.center}>
+        <View style={[styles.center, {marginTop: unitWidth * 40}]}>
           <Button
             text="退出登录"
             onPress={() => this.logout()}

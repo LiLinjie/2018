@@ -61,6 +61,7 @@ export default class DetailsPage extends React.PureComponent {
 
   render () {
     const { info, html, height } = this.state;
+    const { navigation } = this.props;
     if (!info) {
       return (
         <PageLoading />
@@ -118,6 +119,7 @@ export default class DetailsPage extends React.PureComponent {
         <View style={styles.footer}>
           <TouchableOpacity
             style={styles.homeBtn}
+            onPress={() => navigation.navigate('Index')}
           >
             <Text>首页</Text>
           </TouchableOpacity>
