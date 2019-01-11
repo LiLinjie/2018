@@ -31,7 +31,6 @@ export default class IndexPage extends React.PureComponent {
       prodName: keyword || undefined
     }
     const res = await service.getProList(params);
-    console.log(res);
     let prodList  = list.concat(res.data.data.data);
     const totalCount = res.data.data.totalItem;
     const currentCount = prodList.length;

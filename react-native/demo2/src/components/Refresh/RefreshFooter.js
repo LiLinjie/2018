@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, ActivityIndicator, TouchableOpacity, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import RefreshState from './RefreshFooter';
+import { unitWidth } from '../../utils/AdapterUtil';
 
 export default class RefreshFooter extends Component {
   static propTypes = {
@@ -25,7 +26,7 @@ export default class RefreshFooter extends Component {
       case RefreshState.Refreshing:
         footer = (
           <View style={styles.loadingView}>
-            <ActivityIndicator size="small"/>
+            <ActivityIndicator size="small" color="gray"/>
             <Text style={styles.refreshingText}>{this.props.refreshingText}</Text>
           </View>
         );
@@ -63,15 +64,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 15,
+    padding: unitWidth * 15,
   },
   refreshingText: {
-    fontSize: 12,
+    fontSize: unitWidth * 12,
     color: "#666666",
-    paddingLeft: 10,
+    paddingLeft: unitWidth * 10,
   },
   footerText: {
-    fontSize: 12,
+    fontSize: unitWidth * 12,
     color: "#666666"
   }
 });

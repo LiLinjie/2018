@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, WebView, TouchableOpacity, ScrollView, Linking } from 'react-native';
+import { View, Text, StyleSheet, Image, WebView, TouchableOpacity, ScrollView, Linking, AsyncStorage } from 'react-native';
 import Swiper from 'react-native-swiper';
 import LinearGradient from 'react-native-linear-gradient';
 import PageLoading from '../components/PageLoading';
@@ -20,7 +20,8 @@ export default class DetailsPage extends React.PureComponent {
       info: '',
       html: '',
       height: 500,
-      isShowDetailItems: false
+      isShowDetailItems: false,
+      userDetail: ''
     }
   }
 
@@ -32,7 +33,15 @@ export default class DetailsPage extends React.PureComponent {
   async getDetail () {
     const { navigation } = this.props;
     const { comId } = navigation.state.params;
-    const res = await service.getDetail({comId, agentId: 969});
+    const userDetail = await AsyncStorage.getItem('userDetail');
+    let agentId;
+    if (userDetail) {
+      agentId = JSON.parse(userDetail).agentId;
+    }
+    this.setState({
+      userDetail: JSON.parse(userDetail)
+    });
+    const res = await service.getDetail({comId, agentId});
     navigation.setParams({title: res.data.prodName})
     this.setState({
       info: res.data
@@ -56,7 +65,11 @@ export default class DetailsPage extends React.PureComponent {
   }
 
   linkTo () {
-    Linking.openURL(this.state.info.recommendUrl);
+    if (this.state.userDetail) {
+      Linking.openURL(this.state.info.recommendUrl);
+    } else {
+      this.props.navigation.navigate('Auth');
+    }
   }
 
   render () {
@@ -96,9 +109,9 @@ export default class DetailsPage extends React.PureComponent {
           </View>
 
           <View style={styles.detailWrapper}>
-            <View style={{height:this.state.height}}>
+            <View style={{height}}>
               <WebView
-                source={{html: `<!DOCTYPE html><html><head><style>*{margin:0;padding:0;}img{max-width: 100%;vertical-align: top}</style></head><body>${html}<script>window.onload=function(){window.location.hash = 1;document.title = document.body.clientHeight;}</script></body></html>`}}
+                source={{html: `<!DOCTYPE html><html><head><meta charset="UTF-8" /><style>*{margin:0;padding:0;}img{max-width: 100%;vertical-align: top}</style></head><body>${html}<script>window.onload=function(){window.location.hash = 1;document.title = document.body.clientHeight;}</script></body></html>`}}
                 style={{flex:1}}
                 bounces={false}
                 scrollEnabled={false}

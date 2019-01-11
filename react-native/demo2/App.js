@@ -17,6 +17,8 @@ import UCenter from './src/pages/UCenter';
 import Details from './src/pages/Details';
 import Login from './src/pages/Login';
 import { theme } from './src/config/theme';
+import * as service from './src/services/user';
+import PageLoading from './src/components/PageLoading';
 
 const AuthStack = createStackNavigator({ Login });
 
@@ -27,6 +29,15 @@ const TabNavigator = createBottomTabNavigator({
       tabBarLabel: '首页',
       tabBarIcon: ({focused, tintColor}) => (
         <Icon name={`ios-home`} size={25} color={tintColor}/>
+      )
+    }
+  },
+  Search: {
+    screen: Index,
+    navigationOptions: {
+      tabBarLabel: '搜索',
+      tabBarIcon: ({focused, tintColor}) => (
+        <Icon name={`ios-search`} size={25} color={tintColor}/>
       )
     }
   },
@@ -58,24 +69,42 @@ const AppContainer = createStackNavigator({
 class AuthLoadingScreen extends React.Component {
   constructor() {
     super();
+    this.state = {
+      userDetail: ''
+    };
     this._bootstrapAsync();
   }
 
   // Fetch the token from storage then navigate to our appropriate place
   _bootstrapAsync = async () => {
     const userToken = await AsyncStorage.getItem('userToken');
-    console.log('userToken', userToken);
+    let userDetail = await AsyncStorage.getItem('userDetail');
+    if (userToken) {
+      !userDetail && await this.getUserInfo();
+      this.props.navigation.navigate('App');
+    } else {
+      this.props.navigation.navigate('Auth');
+    }
 
     // This will switch to the App screen or Auth screen and this loading
     // screen will be unmounted and thrown away.
-    this.props.navigation.navigate(userToken ? 'App' : 'Auth');
   };
+
+  getUserInfo = async () => {
+    const res = await service.getUserDetail();
+    if (res.status === 1) {
+      await AsyncStorage.setItem('userDetail', JSON.stringify(res.data));
+      this.setState({
+        userDetail: res.data
+      })
+    }
+  }
 
   // Render any loading content that you like here
   render() {
     return (
       <View style={styles.container}>
-        <ActivityIndicator />
+        <PageLoading />
         <StatusBar barStyle="default" />
       </View>
     );
