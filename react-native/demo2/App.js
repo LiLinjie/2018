@@ -16,6 +16,7 @@ import Index from './src/pages/Index';
 import UCenter from './src/pages/UCenter';
 import Details from './src/pages/Details';
 import Login from './src/pages/Login';
+import Search from './src/pages/Search';
 import { theme } from './src/config/theme';
 import * as service from './src/services/user';
 import PageLoading from './src/components/PageLoading';
@@ -29,15 +30,6 @@ const TabNavigator = createBottomTabNavigator({
       tabBarLabel: '首页',
       tabBarIcon: ({focused, tintColor}) => (
         <Icon name={`ios-home`} size={25} color={tintColor}/>
-      )
-    }
-  },
-  Search: {
-    screen: Index,
-    navigationOptions: {
-      tabBarLabel: '搜索',
-      tabBarIcon: ({focused, tintColor}) => (
-        <Icon name={`ios-search`} size={25} color={tintColor}/>
       )
     }
   },
@@ -63,7 +55,8 @@ const AppContainer = createStackNavigator({
       header: null
     })
   },
-  Details
+  Details,
+  Search
 });
 
 class AuthLoadingScreen extends React.Component {

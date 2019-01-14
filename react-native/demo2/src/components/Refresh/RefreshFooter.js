@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, ActivityIndicator, TouchableOpacity, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import RefreshState from './RefreshFooter';
+import RefreshState from './RefreshState';
 import { unitWidth } from '../../utils/AdapterUtil';
+import { theme } from '../../config/theme';
 
 export default class RefreshFooter extends Component {
   static propTypes = {
@@ -64,15 +65,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: unitWidth * 15,
+    padding: unitWidth * 30,
   },
   refreshingText: {
-    fontSize: unitWidth * 12,
-    color: "#666666",
-    paddingLeft: unitWidth * 10,
+    fontSize: unitWidth * 24,
+    color: theme.fontColor2,
+    paddingLeft: unitWidth * 20,
   },
   footerText: {
-    fontSize: unitWidth * 12,
-    color: "#666666"
+    fontSize: unitWidth * 24,
+    color: theme.fontColor2,
   }
 });
